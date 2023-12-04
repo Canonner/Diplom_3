@@ -1,5 +1,5 @@
 import allure
-import time
+
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.action_chains import ActionChains
@@ -33,7 +33,6 @@ class BasePage:
 
     @allure.step('Returning url of the current page')
     def get_current_page_url(self):
-        time.sleep(1)
         return self.driver.current_url
 
     @allure.step('Scrolling to element and clicking')
@@ -43,7 +42,11 @@ class BasePage:
 
     @allure.step('Checking that element is invisible')
     def check_element_is_absent(self, locator):
-        WebDriverWait(self.driver, timeout=3).until(ec.invisibility_of_element_located(locator))
+        WebDriverWait(self.driver, timeout=10).until(ec.invisibility_of_element_located(locator))
+
+    @allure.step('Checking that in certain element its text has changed')
+    def wait_till_text_is_shown(self, locator, text):
+        WebDriverWait(self.driver, 10).until(ec.text_to_be_present_in_element(locator, text))
 
     @allure.step('Drag and drop the element')
     def drag_and_drop_element(self, source_locator, target_locator):

@@ -51,7 +51,7 @@ class TestMainFunctionality:
 
     @allure.title('Checking that authorised user is able to make an order')
     @allure.description('Checks that authorised user is able to make compile a burger and place an order')
-    def test_authorised_user_place_order(self, driver, create_user_and_sign_in):
+    def test_authorised_user_place_order(self, driver, create_user, sign_in):
         main_page = MainPage(driver)
         main_page.create_new_order()
         assert main_page.check_element_is_visible(Mpl.order_identifier_header), 'Unable to place an order'

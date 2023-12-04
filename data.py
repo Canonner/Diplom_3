@@ -2,17 +2,19 @@ from locators.locators import FeedPageLocators as Fpl
 from locators.locators import MainPageLocators as Mpl
 
 
-class CommonData:
+class Urls:
     main_url = 'https://stellarburgers.nomoreparties.site/'
     forgot_password_url = 'https://stellarburgers.nomoreparties.site/forgot-password'
-    reset_password_url = 'https://stellarburgers.nomoreparties.site/reset-password'
     order_history_url = 'https://stellarburgers.nomoreparties.site/account/order-history'
     login_url = 'https://stellarburgers.nomoreparties.site/login'
+    register_url = 'https://stellarburgers.nomoreparties.site/api/auth/register'
+    delete_user_url = 'https://stellarburgers.nomoreparties.site/api/auth/user'
+
+
+class CommonData:
     test_email = 'test_email@ya.ru'
     test_user_password = 'YouShallNotPass'
     test_user_name = 'Gandalf'
-    register_url = 'https://stellarburgers.nomoreparties.site/api/auth/register'
-    delete_user_url = 'https://stellarburgers.nomoreparties.site/api/auth/user'
     counters = [
         [Fpl.completed_all_time_counter, 'Completed for all time'],
         [Fpl.completed_today_counter, 'Completed today']

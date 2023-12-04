@@ -25,7 +25,7 @@ class FeedPageLocators:
     completed_all_time_counter = (By.XPATH, ".//p[text()='Выполнено за все время:']/../p[@class='OrderFeed_number__2MbrQ text text_type_digits-large']")  # Счетчик заказов "Выполнено за все время"
     completed_today_counter = (By.XPATH, ".//p[text()='Выполнено за сегодня:']/../p[@class='OrderFeed_number__2MbrQ text text_type_digits-large']")  # Счетчик заказов "Выполнено за сегодня"
     in_progress_number = (By.XPATH, ".//ul[@class='OrderFeed_orderListReady__1YFem OrderFeed_orderList__cBvyi']/li")  # Номер заказа в разделе "В работе"
-
+    order_number_template = (By.XPATH, ".//p[(text()='#')]")
 
 class LoginPageLocators:
     sign_in_button = (By.XPATH, ".//button[text()='Войти']")  # кнопка "Войти" в форме авторизации
